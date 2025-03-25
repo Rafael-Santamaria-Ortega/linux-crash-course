@@ -11,7 +11,7 @@ There are various ways to login in Linux:
 - Terminal Emulator: graphical app that runs in a window and does a similar thing.
 - Virtual Terminal: ctrl+alt+F2
 
-This concepts come from the old days of computing, as computers were expensive, companies only bought a single one for everyone. Nevertheless, multiple people could connect to it through different devices and use it, even at the same time.Those devices were *consoles* and *terminals*. Nowadays, they are software, instead of software. 
+This concepts come from the old days of computing, as computers were expensive, companies only bought a single one for everyone. Nevertheless, multiple people could connect to it through different devices and use it, even at the same time.Those devices were *consoles* and *terminals*. Nowadays, they are software, instead of hardware. 
 
 In CLI you open a virtual terminal; whereas in GUI, you open a terminal emulator to login and type commands. In practice, it's very usual to login in to remote Linux systems, instead of local ones (*Local GUI systems:* something you can physically acces, like a computer in my desk). A server running on Google Cloud is remote, usally when Linux is installed in such servers it doesn't have a GUI but a CLI. However, sometimes you would get GUI's. This makes it very easy to login (don't forget to log out!). If there is a server oriented Linux OS in the device with no GUI, login is also easy too as you can simply type username and password. When done, type exit to log out. 
 
@@ -32,4 +32,10 @@ Linux has many commands, if you need to read documentation on it use "command --
 - man: Gives full manual description of commands
 - man man: you can use the categories to distinguish between equally named commands and functions, etc.
 - apropos: search for commands without using names (sections 1-8 commands) -> apropos -s 1,8 director
-- mkdir: create directories 
+- mkdir: create directories
+- half command + TAB: suggestions to use commands
+- TAB+TAB all suggestions -> also work for names, directions, files, directories, etc.
+- ssh: conects through ssh to a host from a client
+- touch: create files
+- mandb: install database of manuals to be able to use apropos, man, etc.
+- vi: text editor called VIM -> use Esc to ensure command mode after modifying file use : to enter comand line mode + w to write the file + q to quit editor
