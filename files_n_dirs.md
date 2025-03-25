@@ -1,4 +1,4 @@
-# Working with files and Directories in Linux
+# Notes on Working with files and Directories in Linux
 
 To see files and directories in current directory you use "ls". However, some docs start with a "."; these are hidden files, which can be seen using "ls -a". To see other files and directories in a different one, you use "ls /dir/dir/dir". If we want more details we can use "ls -l", to have a long list format with permissions, etc. You can also combine -a and -l to apply the same long format to include even hidden files as "ls -a -l" or "ls -al". There's also "-h", which shows human readable sizes. You can combine all three as "ls -alh".
 
