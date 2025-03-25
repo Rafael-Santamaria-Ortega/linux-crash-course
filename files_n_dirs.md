@@ -15,7 +15,7 @@ To create a file in current directory you use "touch file.txt", and to create a 
 
 To create a new dir you use "mkdir Receipts" (make directory).
 
-To copy a file you use "cp [source] [destination]". For example, cp file.txt Receipts/ (the final slah is good practice to distinguish files and directories". This command can also be used to copy and rename files as such "cp file.txt Receipts/filecopy.txt". To copy a directory and its contents to another you can use the command flag "-r", which tell the command to copy recursively; that is the directory with everything in it: "cp -r [source] [destination]". An example would be a backup of a full directory: "cp -r Receipts/ BackupReceipts/". The name must be unique to work.
+To copy a file you use "cp [source] [destination]". For example, cp file.txt Receipts/ (the final slah is good practice to distinguish files and directories". This command can also be used to copy and rename files as such "cp file.txt Receipts/filecopy.txt". To copy a directory and its contents to another you can use the command flag "-r", which tell the command to copy recursively; that is the directory with everything in it: "cp -r [source] [destination]". An example would be a backup of a full directory: "cp -r Receipts/ BackupReceipts/". The name must be unique to work. To preserve all of a file's attributes when copying, you can use the flag "-p" as such "cp -p [src] [dst]".
 
 To move a file from one location to another you use the command "mv [source] [destination]" (move) command: "mv file.txt Receipts/". You can also rename files and directories with this command as such "mv file.txt oldfile.txt" and "mv Receipts/ oldreceipts/". Use of -r is not necessary, because mv does that too. 
 
