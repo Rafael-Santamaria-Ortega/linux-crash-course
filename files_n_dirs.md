@@ -23,6 +23,12 @@ To delete a file you can use "rm" (remove) as such "rm oldfile.txt". You can als
 
 ## Create and manage hard and soft links
 
+### Hardlinks
+
 First, some basics of filesystems. You can create a filepath with "echo". For example "echo 'Picture of doggo' > Pictures/doggo.jpg". There is a command that shows interesting things about files and directories, and that is the "stat". This showcases Inodes, which help keep track of data. Each file points to an inode, and each inode points to all the blocks of data that it requires. The command "stat" also shows links of the file, this is the number of hard links to each file or directory. To explain this, when you create a file in Linux, the OS takes all the file's data (or blocks of data scattered in the disk) for it and groups it togheter in an specific unique inode that remebers their location on the disk, and `hard links` it to the file to be able to access the data. So, `file -> inode -> blocks of data`. 
 
-Why would a file or directory have more than 1 hardlink? You could hardlink an inode to another user's directory instead of using "cp", to avoid storing data twice in the disk, which could be a problem with large amount of data. The command to hardlink thusly is "ln path_to_target_file path_to_link_file".
+Why would a file or directory have more than 1 hardlink? You could hardlink an inode to another user's directory instead of using "cp", to avoid storing data twice in the disk, which could be a problem with large amount of data. The command to hardlink thusly is "ln path_to_target_file path_to_link_file". However, hardlinks can only be used for files, and files in the same filesystem. This process requires the  to have the necessary permissions to create file at destination. Also, all users involved must have the required permissions to access file. This could mean adding the users to same group with "useradd -a -G grooup user", and then using "chmod 660 /home/.../file.png" to change permissions on the file.
+
+### Soft Links
+
+`Soft links` are similars to windows desktop shortcuts. Indeed, while `hardlinks` point to `inodes`, `soft links` are files that point to paths to the file. The syntax of creating a soft or symbolic link is "ln -s path_to_target_file path_to_link_file". When "ls -l" we might get a large file path with permissions, etc; but if we only want to read link, we use "readlink dooggo_shortcut.png" to get the path. Permissions of symbolic links do not matter, as the permissions of the destination file apply. Broken links will be highlighted in red with "ls -l" command, you could solve it by navigating to a relevant directory and using a relative path with "ln -s". Contrary to hardlinks, you can soft linkf files and directories, even in different filesystems. 
