@@ -10,6 +10,29 @@ The `stat` command also shouw permissions, but with the Octal value at the begin
 
 ## Pagers and Vim
 
-Pagers are programs made to read files and navigate through pages. There are two, less or more. To access them you just type `less file`. To know if pager, look at bottom left for highlighted name of file. To search the pager you can use arrow keys, and use / to search `/search`, to move to next instance you press n key, togo back you use shift+n keys. If you want to stop case sensitivity you must use `-i`. To exit, just press q. more is accessed the same and will show more at the bottom, you move with spacebar and to leave you use q.
+Pagers are programs made to read files and navigate through pages. There are two, less or more. To access them you just type `less file`. To know if pager, look at bottom left for highlighted name of file. To search the pager you can use arrow keys, and use / to search `/search`, to move to next instance you press n key, togo back you use shift+n keys. If you want to stop case sensitivity you must use `-i`. To exit, just press q. more is accessed the same and will show more at the bottom, you move with spacebar and to leave you use 'q'.
 
 Vim text editor is accessed through `vim`. This text editor is mode sensitive, so in order to write you must press the 'i' key and when INSERT appears, you can write. With `esc` you go back to default mode. To search in Vim you use /+search. To make the search case insensitive you use `/search\c`. You can also go to line number by typing ':' followed by line number. To copy line in command mode, you type 'yy' and paste with 'p'. You can also cut a line with 'dd'. To leave you save with `:w` to write, to quit and save `:wq`, to quit without saving `:q?`. 
+
+# Searching files in Linux using 'grep'
+
+`grep search file` is used to search inside a file. this search is case sensitive, but you can use `-i` to ignore case sensitivity after `grep`. We can also search for all files that exist under a dir and subdir with `-r` (recursive); instead of specifying file you specify directory. You can also combine that option with ignoring case sensitivity as `-ir`. To search through system files it's imperative to use `sudo`. We can also invert the search, so we can search for example for lines or files that do not have something using the `-vi` option. If we want to match only the expression being searched you can use the `-wi` option. Grep shows the entire line, but if we only want the result we use the `-o` option. 
+
+# Using Regular Expressions + Grep
+
+What if you need to extract IP addresses from 10000 logs? We can use regular expressions to search trough all documents, which is the same as a symbolic representation of what we want. In Linux the regex operators are:
+
+- `^`: begins with -> placed at beginning of pattern
+- `$`: ends with -> placed at the end of pattern
+- `.`: match any ONE character -> if you need a '.' use '\.'
+- `*`: match the previous ellemnt 0 or more times -> can be paired up with other operators '/.*/'
+- `\+`: match the previous element 1 or more times -> must be used in it's scaped form
+
+**If you want to avoid escaping operators you can use `grep -Er '0+'` or `egrep`. Common practice is to always use this last one.** 
+
+- `{}`: previous elemnt can exist in the contained element this many times. -> use with comamas at start to find at least x amount or at the end for at most. Can be a range too.
+- `?`: make the previous element optional 
+- `|`: match one thing or the other x|y -> can be combined to search for variations `egrep -ir 'enabled?|disabled?' /etc/`
+- `[]`: range or sets [a-z],[0-9],[A-Z],[abz954] -> searching 'cat' `egrep -r 'c[au]t' /etc/` -> they can be wide or specific at the same time. -> after /dev/ match any characters: `egrep -r '/dev/[a-z]*' /etc/`.
+- `()`: 
+- `[^]`: 
