@@ -33,6 +33,8 @@ What if you need to extract IP addresses from 10000 logs? We can use regular exp
 - `{}`: previous elemnt can exist in the contained element this many times. -> use with comamas at start to find at least x amount or at the end for at most. Can be a range too.
 - `?`: make the previous element optional 
 - `|`: match one thing or the other x|y -> can be combined to search for variations `egrep -ir 'enabled?|disabled?' /etc/`
-- `[]`: range or sets [a-z],[0-9],[A-Z],[abz954] -> searching 'cat' `egrep -r 'c[au]t' /etc/` -> they can be wide or specific at the same time. -> after /dev/ match any characters: `egrep -r '/dev/[a-z]*' /etc/`.
-- `()`: 
-- `[^]`: 
+- `[]`: range or sets [a-z],[0-9],[A-Z],[abz954] -> searching 'cat' `egrep -r 'c[au]t' /etc/` -> they can be wide or specific at the same time. -> after /dev/ match any characters, which migth en with numbers: `egrep -r '/dev/[a-z]*[0-9]?' /etc/`.
+- `()`: subexpressions -> wrap construc in parenthesis so that * applies to the whole construct: `egrep -r '/dev/(([a-z]|[A-Z])*[0-9]?)*' /etc/`
+- `[^]`: negated ranges or sets (look for http not https) -> `http[^s]`
+
+**You can use regex in many more programs including Python!**
