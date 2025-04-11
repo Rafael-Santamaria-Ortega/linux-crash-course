@@ -21,6 +21,8 @@ To move a file from one location to another you use the command "mv [source] [de
 
 To delete a file you can use "rm" (remove) as such "rm oldfile.txt". You can also delete directories by adding the recursive -r flag as such "rm -r oldreceipts/".
 
+You can use `diff` to compare files line by line. You can use `cut` to extract and print contents of a string. 
+
 ## Create and manage hard and soft links
 
 ### Hardlinks
