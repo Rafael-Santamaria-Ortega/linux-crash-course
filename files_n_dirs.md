@@ -21,7 +21,7 @@ To move a file from one location to another you use the command "mv [source] [de
 
 To delete a file you can use "rm" (remove) as such "rm oldfile.txt". You can also delete directories by adding the recursive -r flag as such "rm -r oldreceipts/".
 
-You can use `diff` to compare files line by line. You can use `cut` to extract and print contents of a string. 
+You can use `diff` to compare files line by line. You can use `cut` to extract and print contents of a string, use `-i` for in place editing. You can also use `s/` for substitutions. Make sure to use word boundaries `\b` at start and end and also `/g` at the end to replace all instances if needed. To ignore case sensitivity you can also add `I` cloe to `g`. You can specify a span of lines to do so by adding the range before `\s` such as `sed -i '500,20000s/`. If the expression you want to replace includes '/' which are the default delmiters, you should replace them with '|'.  
 
 ## Create and manage hard and soft links
 
