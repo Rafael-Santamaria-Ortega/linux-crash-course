@@ -16,7 +16,7 @@ Vim text editor is accessed through `vim`. This text editor is mode sensitive, s
 
 # Searching files in Linux using 'grep'
 
-`grep search file` is used to search inside a file. this search is case sensitive, but you can use `-i` to ignore case sensitivity after `grep`. We can also search for all files that exist under a dir and subdir with `-r` (recursive); instead of specifying file you specify directory. You can also combine that option with ignoring case sensitivity as `-ir`. To search through system files it's imperative to use `sudo`. We can also invert the search, so we can search for example for lines or files that do not have something using the `-vi` option. If we want to match only the expression being searched you can use the `-wi` option. Grep shows the entire line, but if we only want the result we use the `-o` option. 
+`grep search file` is used to search inside a file. this search is case sensitive, but you can use `-i` to ignore case sensitivity after `grep`. We can also search for all files that exist under a dir and subdir with `-r` (recursive); instead of specifying file you specify directory. You can also combine that option with ignoring case sensitivity as `-ir`. To search through system files it's imperative to use `sudo`. We can also invert the search, so we can search for example for lines or files that do not have something using the `-vi` option. If we want to match only the expression being searched you can use the `-wi` option. Grep shows the entire line, but if we only want the result we use the `-o` option. You can manipulate strings with `sed`. 
 
 # Using Regular Expressions + Grep
 
